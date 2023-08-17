@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "information about services",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod:start": "npm run build && node build/app.js",
+    "dev:server": "npx nodemon",
+    "build": "npm run test && rimraf ./build && npx tsc",
+    "test": "jest --passWithNoTests"
   },
   "keywords": [
     "nodejs",
@@ -12,5 +16,19 @@
     "mongoose"
   ],
   "author": "Ushkan Daniil",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^7.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.0",
+    "dotenv": "^16.3.1",
+    "prettier": "^3.0.2",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
 }
