@@ -1,0 +1,16 @@
+{
+  "name": "compass-services-info",
+  "version": "1.0.0",
+  "description": "information about services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongoose"
+  ],
+  "author": "Ushkan Daniil",
+  "license": "ISC"
+}
