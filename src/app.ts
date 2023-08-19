@@ -1,8 +1,12 @@
 import 'dotenv/config'
 import express from 'express'
 import { connect } from 'mongoose'
+import serviceRouter from './routers/serviceRouter.js'
+import appointmentRouter from './routers/appointmentRouter.js'
+import bookingRouter from './routers/bookingRouter.js'
 const app = express()
 app.use(express.json())
+app.use('/api', [serviceRouter, appointmentRouter, bookingRouter])
 
 const PORT = process.env.PORT || 7856
 const MONGODB = process.env.MONGODB_URL
