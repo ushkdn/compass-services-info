@@ -11,7 +11,7 @@ class bookingController {
       res.status(200).json(booking)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось создать запись' })
+      res.status(500).json({ message: err.message })
     }
   }
   async getOne(req: Request, res: Response) {
@@ -21,7 +21,7 @@ class bookingController {
       res.status(200).json(booking)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось получить информацию о записи' })
+      res.status(500).json({ message: err.message })
     }
   }
   async getAll(req: Request, res: Response) {
@@ -31,7 +31,7 @@ class bookingController {
       res.status(200).json(bookings)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось получить информацию о записях' })
+      res.status(500).json({ message: err.message })
     }
   }
   async update(req: Request, res: Response) {
@@ -42,7 +42,7 @@ class bookingController {
       res.status(200).json(updatedBooking)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось обновить информацию о записи' })
+      res.status(500).json({ message: err.message })
     }
   }
   async remove(req: Request, res: Response) {
@@ -52,7 +52,7 @@ class bookingController {
       res.status(200).json({ message: 'Информация о записи успешно удалена' })
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось удалить информацию о записи' })
+      res.status(500).json({ message: err.message })
     }
   }
 }

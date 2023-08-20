@@ -10,7 +10,7 @@ class serviceController {
       res.status(200).json(createdService)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Ошибка создания информации об услугах' })
+      res.status(500).json({ message: err.message })
     }
   }
   async getOne(req: Request, res: Response) {
@@ -20,10 +20,10 @@ class serviceController {
       res.status(200).json(service)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Ошибка получения информации об услуге' })
+      res.status(500).json({ message: err.message })
     }
   }
-  async getAll(res: Response) {
+  async getAll(req: Request, res: Response) {
     try {
       const services: IService[] = await serviceService.getAll()
       res.status(200).json(services)
@@ -37,10 +37,11 @@ class serviceController {
       const { serviceId } = req.params
       const serviceData = req.body
       const updatedService: IService = await serviceService.update(serviceId, serviceData)
+
       res.status(200).json(updatedService)
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Ошибка обновления информации об услуге' })
+      res.status(500).json({ message: err.message })
     }
   }
   async remove(req: Request, res: Response) {
@@ -50,7 +51,7 @@ class serviceController {
       res.status(500).json({ message: 'Информация об услуге успешно удалена' })
     } catch (err) {
       console.log(err.message)
-      res.status(500).json({ message: 'Не удалось удалить информацию об услуге' })
+      res.status(500).json({ message: err.message })
     }
   }
 }

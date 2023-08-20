@@ -4,5 +4,5 @@ export interface IService {
   name: string
   description: string
   price: number
-  appointment: IAppointment
+  appointment?: IAppointment
 }
