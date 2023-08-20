@@ -10,7 +10,7 @@ const serviceSchema = new Schema<IService>({
   },
   description: {
     type: String,
-    required: true,
+    required: true, 
   },
   price: {
     type: Number,

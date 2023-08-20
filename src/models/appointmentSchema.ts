@@ -8,11 +8,11 @@ const appointmentSchema = new Schema<IAppointment>({
   },
   timeStart: {
     type: Date,
-    required:true,
+    required: true,
   },
   timeEnd: {
     type: Date,
-    required:true,
+    required: true,
   },
   booking: {
     type: [bookingSchema],

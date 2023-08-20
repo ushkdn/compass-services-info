@@ -6,7 +6,7 @@ export class updateServiceDto {
     readonly appointment?: {
       readonly interval?: number
       readonly timeStart?: Date
-      readonly retimeEnd?: Date
+      readonly timeEnd?: Date
     },
   ) {}
 }

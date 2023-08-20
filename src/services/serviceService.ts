@@ -2,6 +2,7 @@ import serviceModel from '../models/serviceModel.js'
 import { createServiceDto } from '../dtos/serviceDtos/createSeviceDto.js'
 import { updateServiceDto } from '../dtos/serviceDtos/updateServiceDto.js'
 
+
 class serviceService {
   async create(service: createServiceDto) {
     return await serviceModel.create(service)

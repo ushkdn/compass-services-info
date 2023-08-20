@@ -1,8 +1,7 @@
 import handleValidationErrors from '../utils/handleValidationErrors.js'
 import serviceController from '../controllers/serviceController.js'
-import { Router } from 'express'
 import { validation } from '../utils/validation.js'
-
+import { Router } from 'express'
 const serviceRouter = Router()
 
 serviceRouter.post('/service', validation, handleValidationErrors, serviceController.create)
