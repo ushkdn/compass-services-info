@@ -5,12 +5,16 @@ import { IService } from '../interfaces/serviceInterface.js'
 const serviceSchema = new Schema<IService>({
   name: {
     type: String,
+    unique: true,
+    required: true,
   },
   description: {
     type: String,
+    required: true, 
   },
   price: {
     type: Number,
+    required: true,
   },
   appointment: {
     type: appointmentSchema,
