@@ -4,10 +4,10 @@ import { validation } from '../utils/validation.js'
 import { Router } from 'express'
 const serviceRouter = Router()
 
-serviceRouter.post('/service', validation, handleValidationErrors, serviceController.create)
-serviceRouter.get('/service/:serviceId', handleValidationErrors, serviceController.getOne)
-serviceRouter.get('/service', handleValidationErrors, serviceController.getAll)
-serviceRouter.patch('/service/:serviceId', handleValidationErrors, serviceController.update)
-serviceRouter.delete('/service/:serviceId', handleValidationErrors, serviceController.remove)
+serviceRouter.post('/', validation, handleValidationErrors, serviceController.create)
+serviceRouter.get('/:serviceId', handleValidationErrors, serviceController.getOne)
+serviceRouter.get('/', handleValidationErrors, serviceController.getAll)
+serviceRouter.patch('/:serviceId', handleValidationErrors, serviceController.update)
+serviceRouter.delete('/:serviceId', handleValidationErrors, serviceController.remove)
 
 export default serviceRouter

@@ -4,7 +4,7 @@ export class createServiceDto {
     readonly description: string,
     readonly price: number,
     readonly appointment: {
-      readonly interval: number
+      readonly interval?: number
       readonly timeStart: Date
       readonly timeEnd: Date
     },

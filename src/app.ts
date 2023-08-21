@@ -5,7 +5,7 @@ import serviceRouter from './routers/serviceRouter.js'
 import bookingRouter from './routers/bookingRouter.js'
 const app = express()
 app.use(express.json())
-app.use('/api', [serviceRouter, bookingRouter])
+app.use('/api/service/', [serviceRouter, bookingRouter])
 
 const PORT = process.env.PORT || 7856
 const MONGODB = process.env.MONGODB_URL
