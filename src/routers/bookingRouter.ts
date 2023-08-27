@@ -13,12 +13,7 @@ bookingRouter.post(
 )
 bookingRouter.get('/:serviceId/booking/:bookingId', handleValidationErrors, bookingController.getOne)
 bookingRouter.get('/:serviceId/booking', handleValidationErrors, bookingController.getAll)
-bookingRouter.patch(
-  '/:serviceId/booking/:bookingId',
-  validation.updateBookingValidation,
-  handleValidationErrors,
-  bookingController.update,
-)
+bookingRouter.patch('/:serviceId/booking/:bookingId', handleValidationErrors, bookingController.update)
 bookingRouter.delete('/:serviceId/booking/:bookingId', handleValidationErrors, bookingController.remove)
 
 export default bookingRouter
