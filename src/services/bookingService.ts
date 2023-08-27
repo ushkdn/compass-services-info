@@ -49,11 +49,10 @@ class bookingService {
     return service.appointment.booking[bookingIndex]
   }
   async remove(serviceId: string, bookingId: string) {
-    const service = await serviceModel.findById(serviceId)
-    const bookingIndex = service.appointment.booking.findIndex((booking) => booking._id.toString() === bookingId)
-    service.appointment.booking.splice(bookingIndex, 1)
+    const service = await serviceModel.findByIdAndUpdate(serviceId, {
+      $pull: { 'appointment.booking': { _id: bookingId } },
+    })
     await service.save()
-    return service.appointment.booking[bookingIndex]
   }
 }
 export default new bookingService()
